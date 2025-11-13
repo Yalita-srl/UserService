@@ -40,8 +40,8 @@ class User(AbstractUser):
     )
 
     # Database fields
-    first_name = None
-    last_name = None
+    first_name = models.CharField(max_length=150, editable=False, blank=True)
+    last_name = models.CharField(max_length=150, editable=False, blank=True)
     username = None
     date_joined = None
     email = models.EmailField(unique=True)
