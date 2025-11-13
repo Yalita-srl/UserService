@@ -1,0 +1,7 @@
+Django==5.0
+graphene-django==3.0.0
+django-graphql-jwt==0.3.4
+PyMySQL==1.1.0
+python-dotenv==1.0.0
+djangorestframework==3.14.0
+PyJWT==2.10.1
