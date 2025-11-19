@@ -153,3 +153,22 @@ GRAPHQL_JWT = {
     "JWT_ALLOW_REFRESH": True,
     "JWT_REFRESH_EXPIRATION_DELTA": datetime.timedelta(days=7),
 }
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "json_console": {
+            "class": "logging.StreamHandler",
+            "formatter": "json",
+        },
+    },
+    "formatters": {
+        "json": {
+            "format": '{"level": "%(levelname)s", "timestamp": "%(asctime)s", "message": "%(message)s", "logger": "%(name)s"}'
+        }
+    },
+    "root": {
+        "handlers": ["json_console"],
+        "level": "INFO",
+    },
+}
