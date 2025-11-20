@@ -35,7 +35,7 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "80:80"
+      - "8081:80"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - static_volume:/usr/share/nginx/html/static # Monta el volumen para archivos estáticos

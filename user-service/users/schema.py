@@ -88,17 +88,16 @@ class RegisterUser(graphene.Mutation):
         # Ensure only admins can create other admins or restaurant owners
         current_user = info.context.user
         if input.role in ['admin', 'restaurant_owner'] and (not current_user.is_authenticated or not current_user.is_admin):
-             raise Exception("You are not authorized to create this type of user.")
+            raise Exception("You are not authorized to create this type of user.")
 
         user = User.objects.create_user(
             email=input.email,
+            password=input.password,
             name=input.name,
             phone=input.phone,
             address=input.address,
             role=input.role
         )
-        user.set_password(input.password)
-        user.save()
         return RegisterUser(user=user)
 
 # Update an existing user
