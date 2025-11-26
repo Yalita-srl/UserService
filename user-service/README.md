@@ -80,7 +80,8 @@ python manage.py createsuperuser
 
 ### 8. Ejecutar el Servidor de Desarrollo
 
-```bash
+```bash[sergioveloper@sergiodev yalita]$ curl GET http://localhost:8000/api/productos/1
+
 python manage.py runserver
 ```
 
